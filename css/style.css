@@ -1,0 +1,61 @@
+body,
+div,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+figcaption {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #efccff;
+  text-align: center;
+}
+
+h1 {
+  color: #ffff99;
+  font: bold 56px verdana, sans-serif;
+  margin: 2px;
+}
+
+h3 {
+  color: #ffff99;
+  font: italic 24px verdana, sans-serif;
+  margin-bottom: 30px;
+}
+
+p {
+  color: #ff66d9;
+  font: bold 36px verdana, sans-serif;
+  margin-bottom: 10px;
+}
+
+img {
+  padding: 5px;
+  border: 15px double #ffff99;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  width: 300px;
+}
+
+figure {
+  display: inline-block;
+}
+
+.tallycounter {
+  margin-bottom: 50px;
+  margin-top: -20px;
+}
+
+.inlineP {
+  display: inline;
+  margin-right: 50px;
+}
