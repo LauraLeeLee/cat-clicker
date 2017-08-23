@@ -26,28 +26,29 @@ h1 {
   margin: 2px;
 }
 
-h3 {
+h2 {
   color: #ffff99;
   font: italic 24px verdana, sans-serif;
   margin-bottom: 30px;
 }
 
-p {
+h3 {
+  color: #ff66d9;
+  font: bold 36px verdana, sans-serif;
+}
+
+h4 {
   color: #ff66d9;
   font: bold 36px verdana, sans-serif;
   margin-bottom: 10px;
 }
 
-img {
-  padding: 5px;
-  border: 15px double #ffff99;
-  margin-bottom: 20px;
-  margin-right: 10px;
-  width: 300px;
+.catImg {
+  display: inline;
 }
 
 figure {
-  display: inline-block;
+  display: inline;
 }
 
 .tallycounter {
@@ -57,5 +58,5 @@ figure {
 
 .inlineP {
   display: inline;
-  margin-right: 50px;
+  margin-right: 20px;
 }

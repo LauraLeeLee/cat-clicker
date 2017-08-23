@@ -1,0 +1,72 @@
+<div class="jumbotron text-center">
+ <h1>My First Bootstrap Page</h1>
+ <p>Resize this responsive page to see the effect!</p>
+</div>
+
+<div class="container">
+ <div class="row">
+   <div class="col-sm-4">
+     <h3>Column 1</h3>
+     <p>Lorem ipsum dolor..</p>
+     <p>Ut enim ad..</p>
+   </div>
+   <div class="col-sm-4">
+     <h3>Column 2</h3>
+     <p>Lorem ipsum dolor..</p>
+     <p>Ut enim ad..</p>
+   </div>
+   <div class="col-sm-4">
+     <h3>Column 3</h3>
+     <p>Lorem ipsum dolor..</p>
+     <p>Ut enim ad..</p>
+   </div>
+ </div>
+</div>
+
+//unused catClicker code<!--<div class= container>
+   <div class = "row">
+      <div class = "col-med-6">
+        <p id ="cat1Name" class = "inlineP">
+          Kitty
+        </p>
+          <img id ="catpic" src = "images/catclicker.jpg" alt ="cute kitten">
+        <p id= "tally" class = "inlineP">
+          0
+        </p>
+    </div>
+     <div class="col-med-6">
+       <p id = "cat2Name" class = "inlineP">
+         Mr. Tipps
+       </p>
+       <img id ="catpic2" src = "images/catclicker2.jpg" alt = "cuter kitten">
+       <p id= "tally2" class = "inlineP">
+         0
+       </p>
+     </div>
+   </div>
+
+  <div class= "row images">
+    <div class ="col-med-6">
+      <figure>
+        <figcaption>
+          <p id ="cat1Name">Kitty</p>
+        </figcaption>
+        <img id ="catpic" src = "images/catclicker.jpg" alt ="cute kitten">
+        <figcaption >
+          <p id = "tally" class = "tallycounter">0</P>
+        </figcaption>
+      </figure>
+    </div>
+    <div class = "col-med-6">
+    <figure>
+      <figcaption>
+        <p id = "cat2Name">Mr. Tipps</p>
+      </figcaption>
+      <img id ="catpic2" src = "images/catclicker2.jpg" alt = "cuter kitten">
+      <figcaption >
+        <p id = "tally2" class = "tallycounter">0</p>
+      </figcaption>
+    </figure>
+    </div>
+  </div>
+</div> -->
