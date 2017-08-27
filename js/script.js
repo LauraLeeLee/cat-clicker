@@ -1,6 +1,6 @@
 //var counter = 0;
 
-//vanilla JS code, adds event listener to image,
+//JS code, adds event listener to image,
 /*var elem = document.getElementById('catpic');
 elem.addEventListener('click',function(){
   counter++;
@@ -27,7 +27,7 @@ var cats = [{
   name: "Mr. Tipps",
   count: 0,
   id: 2
-}]
+}];
 
 
 function addCats(cats) {
@@ -53,14 +53,28 @@ function addCats(cats) {
     catElem.appendChild(catCounter);
 
     //adds counter tally from clicks to document
-    catImage.addEventListener('click', function(currentCat){
+    catImage.addEventListener('click', (function(currentCat){
+      //console.log(catCounter.innerHTML);
+      var counter = cats[i].count;
       return function(){
-        catCounter.innerHTML = Number(catCounter.innerHTML)+ 1;
+        //var index = event.target.id - 1;  // get id from event.target object to calculate index
+        //cats[index].count++;
+        counter++;
+        catCounter.innerHTML = counter;
+        console.log(event.target);
+        console.log(catCounter);
       };
-      console.log(catCounter.innerHTML);
-      //console.log(event.target);
-    }) (catCounter);
+      /*cat.addEventListener('click', (function countClicks(i) {
+	   var clickCount = 0;
+  	return function() {
+  		clickCount++;
+  		var score = document.getElementById('score-' + i);
+  		score.innerHTML = clickCount;
+  	};
+})(i));*/
+
+    })(catCounter));
     document.body.appendChild(catElem);
-  };
-};
+  }
+}
 addCats(cats);
