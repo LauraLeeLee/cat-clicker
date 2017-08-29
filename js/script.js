@@ -22,15 +22,6 @@ var cats = [{
   id: 2
 }];
 
-//make helper function for click
-function makeClickHandler(imgElem, counterElem){
-  imgElem.addEventListener('click', function(){
-    console.log('Click triggered--Here is the catImage elem reference: ', imgElem);
-    console.log('the currentCat elem: ',counterElem);
-    counterElem.innerHTML = Number(counterElem.innerHTML)+1;
-  });
-}
-
 
 function addCats(cats) {
   for(var i = 0; i < cats.length; i++) {
@@ -57,8 +48,15 @@ function addCats(cats) {
 
     // use closure principal to "save" the current references of catImage & catCounter before
     // the next loop iteration redefines them
-    makeClickHandler(catImage, catCounter);
-
+    // this time we are just defining a function, not even bothering to give it a name because
+    // we don't plan to reuse it, AND then invoking it immediateley, passing in what we want to preserve
+    (function makeClickHandler(imgElem, counterElem){
+      imgElem.addEventListener('click', function(){
+        console.log(this);
+        console.log("catcounter id #" +catCounter.id);
+        counterElem.innerHTML = Number(counterElem.innerHTML)+1;
+      });
+    })(catImage, catCounter)
     document.body.appendChild(catElem);
   };
 };
