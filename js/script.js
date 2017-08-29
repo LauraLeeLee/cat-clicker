@@ -38,7 +38,7 @@ function addCats(cats) {
     catImage.style.width = '200px';
     catImage.className = ("catImg");
     catElem.appendChild(catImage);
-    console.log("cat image");
+    catImage.id = "image-" + cats[i].id;
 
     //adds counter to document
     var catCounter = document.createElement('h4');
@@ -52,8 +52,8 @@ function addCats(cats) {
     // we don't plan to reuse it, AND then invoking it immediateley, passing in what we want to preserve
     (function makeClickHandler(imgElem, counterElem){
       imgElem.addEventListener('click', function(){
-        console.log(this);
-        console.log("catcounter id #" +catCounter.id);
+        console.log("catImage" + catImage.id);
+        console.log("catCounter id #" + catCounter.id);
         counterElem.innerHTML = Number(counterElem.innerHTML)+1;
       });
     })(catImage, catCounter)
