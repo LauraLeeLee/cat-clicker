@@ -1,13 +1,5 @@
 //var counter = 0;
 
-//JS code, adds event listener to image,
-/*var elem = document.getElementById('catpic');
-elem.addEventListener('click',function(){
-  counter++;
-  document.getElementById('tally').innerHTML = counter;
-  console.log(counter);
-}); */
-
 //jQuery code
 //adds click listener to image
 /*$('#catpic').click(function(e){
@@ -15,6 +7,7 @@ elem.addEventListener('click',function(){
   $('#tally').text(counter);
   console.log(counter);
 });*/
+
 
 //array for crazy lady cat collection
 var cats = [{
@@ -28,6 +21,15 @@ var cats = [{
   count: 0,
   id: 2
 }];
+
+//make helper function for click
+function makeClickHandler(imgElem, counterElem){
+  imgElem.addEventListener('click', function(){
+    console.log('Click triggered--Here is the catImage elem reference: ', imgElem);
+    console.log('the currentCat elem: ',counterElem);
+    counterElem.innerHTML = Number(counterElem.innerHTML)+1;
+  });
+}
 
 
 function addCats(cats) {
@@ -49,32 +51,37 @@ function addCats(cats) {
 
     //adds counter to document
     var catCounter = document.createElement('h4');
+    catCounter.id = "counter-" + cats[i].id;
     catCounter.innerHTML = cats[i].count;
     catElem.appendChild(catCounter);
 
-    //adds counter tally from clicks to document
-    catImage.addEventListener('click', (function(currentCat){
-      //console.log(catCounter.innerHTML);
-      var counter = cats[i].count;
-      return function(){
-        //var index = event.target.id - 1;  // get id from event.target object to calculate index
-        //cats[index].count++;
-        counter++;
-        catCounter.innerHTML = counter;
-        console.log(event.target);
-        console.log(catCounter);
-      };
-      /*cat.addEventListener('click', (function countClicks(i) {
-	   var clickCount = 0;
-  	return function() {
-  		clickCount++;
-  		var score = document.getElementById('score-' + i);
-  		score.innerHTML = clickCount;
-  	};
-})(i));*/
+    // use closure principal to "save" the current references of catImage & catCounter before
+    // the next loop iteration redefines them
+    makeClickHandler(catImage, catCounter);
 
-    })(catCounter));
     document.body.appendChild(catElem);
-  }
-}
+  };
+};
 addCats(cats);
+
+/*
+$(document).ready(function() {
+  $('img').click(function(){
+    var tally = parseInt($(this).next("h4").text());
+    tally++;
+    console.log(tally);
+    console.log(this);
+  });
+});
+
+
+
+
+/*cat.addEventListener('click', (function countClicks(i) {
+ var clickCount = 0;
+ return function() {
+   clickCount++;
+   var score = document.getElementById('score-' + i);
+   score.innerHTML = clickCount;
+  };
+})(i));*/
