@@ -20,13 +20,47 @@ var cats = [{
   name: "Mr. Tipps",
   count: 0,
   id: 2
+},
+{ img: "images/catclicker3.jpg",
+  name: "FraidyCat",
+  count: 0,
+  id: 3
+},
+{ img: "images/catclicker4.jpg",
+  name: "MsClawz",
+  count: 0,
+  id: 4
+},
+{ img: "images/catclicker5.jpg",
+  name: "ZsaZsa",
+  count: 0,
+  id:5
 }];
 
+//create list of cat names on side for selection
+function createNameUl () {
+  var listDiv = document.createElement('div');
+  listDiv.id = "listDiv";
+  var ul = document.createElement('ul');
+  for(var i = 0; i < cats.length; i++){
+    var anchor = document.createElement('a');
+    anchor.href = '#';
+    anchor.innerText = cats[i].name;
+    var li = document.createElement('li');
+    li.appendChild(anchor);
+    ul.appendChild(li);
+    listDiv.appendChild(ul);
+    console.log(ul);
+  };
+  return ul;
+};
 
+//creates cat elements and block to hold photo, name, counter
 function addCats(cats) {
   for(var i = 0; i < cats.length; i++) {
     //creates div to hold each "cat block"(name, image, counter)
     var catElem = document.createElement('div');
+    catElem.className = ("catElem");
     //adds cat name to document
     var catName = document.createElement('h3');
     catName.innerHTML = cats[i].name;
@@ -52,8 +86,8 @@ function addCats(cats) {
     // we don't plan to reuse it, AND then invoking it immediateley, passing in what we want to preserve
     (function makeClickHandler(imgElem, counterElem){
       imgElem.addEventListener('click', function(){
-        console.log("catImage" + catImage.id);
-        console.log("catCounter id #" + catCounter.id);
+        console.log("catImage" , imgElem);
+        console.log("catCounter id #", counterElem);
         counterElem.innerHTML = Number(counterElem.innerHTML)+1;
       });
     })(catImage, catCounter)
@@ -61,25 +95,3 @@ function addCats(cats) {
   };
 };
 addCats(cats);
-
-/*
-$(document).ready(function() {
-  $('img').click(function(){
-    var tally = parseInt($(this).next("h4").text());
-    tally++;
-    console.log(tally);
-    console.log(this);
-  });
-});
-
-
-
-
-/*cat.addEventListener('click', (function countClicks(i) {
- var clickCount = 0;
- return function() {
-   clickCount++;
-   var score = document.getElementById('score-' + i);
-   score.innerHTML = clickCount;
-  };
-})(i));*/
