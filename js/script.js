@@ -39,10 +39,10 @@ var cats = [{
 
 //create div to hold list of cat menu
 var listDiv = document.createElement('div');
-listDiv.id = "listDiv";
+listDiv.id = 'listDiv';
 //create ul for cat menu
-var ul = document.createElement('ul');
-listDiv.appendChild(ul);
+var mainList = document.createElement('ul');
+listDiv.appendChild(mainList);
 
 //create list of cat names on side for selection
 function createNameUl () {
@@ -52,9 +52,9 @@ function createNameUl () {
     anchor.innerText = cats[i].name;
     var li = document.createElement('li');
     li.appendChild(anchor);
-    ul.appendChild(li);
+    mainList.appendChild(li);
   };
-  console.log(ul);
+  console.log(mainList);
 };
 createNameUl(cats);
 
