@@ -37,23 +37,26 @@ var cats = [{
   id:5
 }];
 
+//create div to hold list of cat menu
+var listDiv = document.createElement('div');
+listDiv.id = "listDiv";
+//create ul for cat menu
+var ul = document.createElement('ul');
+listDiv.appendChild(ul);
+
 //create list of cat names on side for selection
 function createNameUl () {
-  var listDiv = document.createElement('div');
-  listDiv.id = "listDiv";
-  var ul = document.createElement('ul');
   for(var i = 0; i < cats.length; i++){
     var anchor = document.createElement('a');
-    anchor.href = '#';
+    anchor.href = cats[i].img;
     anchor.innerText = cats[i].name;
     var li = document.createElement('li');
     li.appendChild(anchor);
     ul.appendChild(li);
-    listDiv.appendChild(ul);
-    console.log(ul);
   };
-  return ul;
+  console.log(ul);
 };
+createNameUl(cats);
 
 //creates cat elements and block to hold photo, name, counter
 function addCats(cats) {
