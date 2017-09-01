@@ -64,3 +64,16 @@ figure {
   display: inline;
   margin-right: 20px;
 }
+
+#listDiv {
+  float: left;
+  margin-top: 20px;
+}
+
+#mainList {
+  font: 40px "Comic Sans MS", cursive;
+}
+
+li {
+  margin: 10px;
+}
