@@ -52,8 +52,10 @@ document.body.appendChild(listDiv);
 function createNameUl () {
   for(var i = 0; i < cats.length; i++){
     var anchor = document.createElement('a');
-    anchor.href = cats[i].img;
-    anchor.innerText = cats[i].name;
+    catListImg = cats[i].img;
+    anchor.href = catListImg;
+    catListName = cats[i].name;
+    anchor.innerText = catListName;
     var li = document.createElement('li');
     li.appendChild(anchor);
     ul.appendChild(li);
@@ -81,6 +83,10 @@ function addCats(cats) {
     catElem.appendChild(catImage);
     catImage.id = "image-" + cats[i].id;
 
+    //adds cat chosen from list to display
+
+
+
     //adds counter to document
     var catCounter = document.createElement('h4');
     catCounter.id = "counter-" + cats[i].id;
@@ -91,11 +97,15 @@ function addCats(cats) {
     // the next loop iteration redefines them
     // this time we are just defining a function, not even bothering to give it a name because
     // we don't plan to reuse it, AND then invoking it immediateley, passing in what we want to preserve
-    (function makeClickHandler(imgElem, counterElem){
-      imgElem.addEventListener('click', function(){
-        console.log("catImage" , imgElem);
+    (function makeClickHandler(listName, counterElem){
+      listName.addEventListener('click', function(){
+        console.log("catListName" , listName);
         console.log("catCounter id #", counterElem);
         counterElem.innerHTML = Number(counterElem.innerHTML)+1;
+        var selectedCat = document.createElement('img');
+        selectedCat.src = catListImg;
+        selectedCat.appendChild(body);
+
       });
     })(catImage, catCounter)
     document.body.appendChild(catElem);

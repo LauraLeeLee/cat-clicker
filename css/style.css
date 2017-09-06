@@ -45,6 +45,7 @@ h4 {
 
 .catElem {
   margin-bottom: 40px;
+  visibility: hidden;
 }
 
 .catImg {
