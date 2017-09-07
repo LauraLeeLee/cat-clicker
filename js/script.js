@@ -1,14 +1,3 @@
-//var counter = 0;
-
-//jQuery code
-//adds click listener to image
-/*$('#catpic').click(function(e){
-  counter++;
-  $('#tally').text(counter);
-  console.log(counter);
-});*/
-
-
 //array for crazy lady cat collection
 var cats = [{
   img: "images/catclicker.jpg",
@@ -52,9 +41,9 @@ document.body.appendChild(listDiv);
 function createNameUl () {
   for(var i = 0; i < cats.length; i++){
     var anchor = document.createElement('a');
-    catListImg = cats[i].img;
-    anchor.href = catListImg;
-    catListName = cats[i].name;
+    var catListImg = cats[i].img;
+    //anchor.href = catListImg;
+    var catListName = cats[i].name;
     anchor.innerText = catListName;
     var li = document.createElement('li');
     li.appendChild(anchor);
@@ -64,7 +53,45 @@ function createNameUl () {
 };
 createNameUl(cats);
 
-//creates cat elements and block to hold photo, name, counter
+var catCount = cats.count;
+
+//creats click handler
+function makeClickHandler (listElement, counterElement) {
+  listElement.addEventListener('click', function(){
+    //creates div to hold each "cat block"(name, image, counter)
+    var catElem = document.createElement('div');
+    catElem.className = ("catElem");
+
+    //adds cat name to document
+    var catName = document.createElement('h3');
+    catName.innerHTML = this.name;
+    catElem.appendChild(catName);
+
+    //adds counter to document
+    var catCounter = document.createElement('h4');
+    catCounter.id = "counter-" + this.id;
+    catCounter.innerHTML = this.count;
+    catElem.appendChild(catCounter);
+
+    //adds cat image to document
+    var catImage = document.createElement('img');
+    catImage.src = this.img;
+    catImage.style.width = '200px';
+    catImage.className = ("catImg");
+    catElem.appendChild(catImage);
+    catImage.id = "image-" + this.id;
+    console.log('Click handler fired! Here is the catImage element reference: ', listElement)
+    console.log('...and here is the currentCat element reference: ', counterElement)
+    counterElement.innerHTML = Number(counterElement.innerHTML)+ 1;
+    this.count++;
+  });
+  makeClickHandler(catListName, catCount);
+  document.body.appendChild(catElem);
+}
+
+
+
+/*
 function addCats(cats) {
   for(var i = 0; i < cats.length; i++) {
     //creates div to hold each "cat block"(name, image, counter)
@@ -83,9 +110,8 @@ function addCats(cats) {
     catElem.appendChild(catImage);
     catImage.id = "image-" + cats[i].id;
 
+
     //adds cat chosen from list to display
-
-
 
     //adds counter to document
     var catCounter = document.createElement('h4');
@@ -110,5 +136,5 @@ function addCats(cats) {
     })(catImage, catCounter)
     document.body.appendChild(catElem);
   };
-};
-addCats(cats);
+};   */
+//addCats(cats);
