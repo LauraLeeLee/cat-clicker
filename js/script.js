@@ -75,14 +75,12 @@ var catDisplay = function (){
 
   //adds cat image to document
   var catImage = document.createElement('img');
-  catImage.src = cats[i].img;
+  catImage.src = cats.img;
   catImage.style.width = '200px';
   catImage.className = ("catImg");
   catElem.appendChild(catImage);
   catImage.id = "image-" + cats.id;
-
-  counterElement.innerHTML = Number(counterElement.innerHTML)+ 1;
-  cats.count++;
+  document.body.appendChild(catElem);
 };
 
 
@@ -90,10 +88,10 @@ var catDisplay = function (){
 function makeClickHandler (listElement, counterElement) {
   listElement.addEventListener('click', function(){
     catDisplay();
+    counterElement.innerHTML = Number(counterElement.innerHTML)+ 1;
+    cats.count++;
     console.log(this.id);
     console.log(this.img);
-
-    document.body.appendChild(catElem);
   });
 }(createNameLi, catCount);
 
