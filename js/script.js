@@ -33,25 +33,26 @@ function createNameLi () {
     anchor = document.createElement('a');
     var catListImg = cats[i].img;
     var catListName = cats[i].name;
-    //anchor.href = catListImg;
+    anchor.href = catListImg;
     anchor.innerText = catListName;
     li.appendChild(anchor);
     document.getElementById('cat-list').appendChild(li);
+    makeClickHandler(catListName, cats);
   };
-};  
+};
 createNameLi(cats);
 
 //creats click handler
-/*
-function makeClickHandler (listElement, counterElement) {
-  listElement.addEventListener('click', function(){
-    catDisplay();
-    counterElement.innerHTML = Number(counterElement.innerHTML)+ 1;
+function makeClickHandler (nameLi, selectCat) {
+  nameLi.addEventListener('click', function(){
+    //counterElement.innerHTML = Number(counterElement.innerHTML)+ 1;
     cats.count++;
+    getElementById('count').value = new Number(cats[i].count);
+    console.log(this.count);
     console.log(this.id);
     console.log(this.img);
   });
-}(createNameLi, catCount);
+};
 
 
 /*
