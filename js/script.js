@@ -45,8 +45,7 @@ createNameLi(cats);
 //creats click handler
 function makeClickHandler (liElement, cat) {
   liElement.addEventListener('click', function(){
-    document.getElementById('current-cat').setAttribute('src', this.img);
-    //counterElement.innerHTML = Number(counterElement.innerHTML)+ 1;
+    catListImg = document.getElementById('current-cat').setAttribute('src', this.img);
     this.count++;
     getElementById('count').value = new Number(this.count);
     console.log(this.count);
