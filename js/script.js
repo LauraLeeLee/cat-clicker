@@ -37,17 +37,18 @@ function createNameLi () {
     anchor.innerText = catListName;
     li.appendChild(anchor);
     document.getElementById('cat-list').appendChild(li);
-    makeClickHandler(catListName, cats);
+    makeClickHandler(li, cats);
   };
 };
 createNameLi(cats);
 
 //creats click handler
-function makeClickHandler (nameLi, selectCat) {
-  nameLi.addEventListener('click', function(){
+function makeClickHandler (liElement, cat) {
+  liElement.addEventListener('click', function(){
+    document.getElementById('current-cat').setAttribute('src', this.img);
     //counterElement.innerHTML = Number(counterElement.innerHTML)+ 1;
-    cats.count++;
-    getElementById('count').value = new Number(cats[i].count);
+    this.count++;
+    getElementById('count').value = new Number(this.count);
     console.log(this.count);
     console.log(this.id);
     console.log(this.img);
