@@ -66,13 +66,18 @@ figure {
   margin-right: 20px;
 }
 
-#listDiv {
+#list-div {
   float: left;
   margin-top: 20px;
 }
 
-#mainList {
-  font: 40px "Comic Sans MS", cursive;
+#cat-list {
+  font: 30px "Comic Sans MS", cursive;
+}
+
+#display-div {
+  float: right;
+  margin-top: 20px;
 }
 
 li {

@@ -26,35 +26,35 @@ var cats = [{
   id:5
 }];
 
-//create div to hold list of cat menu
-var listDiv = document.createElement('div');
-listDiv.setAttribute('id', 'listDiv');
-
-//create ul for cat menu
-var ul = document.createElement('ul');
-ul.setAttribute('id', 'mainList');
-listDiv.appendChild(ul);
-
-document.body.appendChild(listDiv);
-
-var catListImg = cats.img;
-
-//create list of cat names on side for selection
+//create list of cat names
 function createNameLi () {
   for(var i = 0; i < cats.length; i++){
-    var anchor = document.createElement('a');
-
-    //anchor.href = catListImg;
-    var catListName = cats[i].name;
-    anchor.innerText = catListName;
     var li = document.createElement('li');
+    anchor = document.createElement('a');
+    var catListImg = cats[i].img;
+    var catListName = cats[i].name;
+    //anchor.href = catListImg;
+    anchor.innerText = catListName;
     li.appendChild(anchor);
-    ul.appendChild(li);
+    document.getElementById('cat-list').appendChild(li);
   };
-  console.log(ul);
-};
+};  
 createNameLi(cats);
 
+//creats click handler
+/*
+function makeClickHandler (listElement, counterElement) {
+  listElement.addEventListener('click', function(){
+    catDisplay();
+    counterElement.innerHTML = Number(counterElement.innerHTML)+ 1;
+    cats.count++;
+    console.log(this.id);
+    console.log(this.img);
+  });
+}(createNameLi, catCount);
+
+
+/*
 var catCount = cats.count;
 
 var catDisplay = function (){
@@ -82,19 +82,7 @@ var catDisplay = function (){
   catImage.id = "image-" + cats.id;
   document.body.appendChild(catElem);
 };
-
-
-//creats click handler
-function makeClickHandler (listElement, counterElement) {
-  listElement.addEventListener('click', function(){
-    catDisplay();
-    counterElement.innerHTML = Number(counterElement.innerHTML)+ 1;
-    cats.count++;
-    console.log(this.id);
-    console.log(this.img);
-  });
-}(createNameLi, catCount);
-
+*/
 
 /*
 function addCats(cats) {
