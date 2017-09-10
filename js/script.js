@@ -30,29 +30,31 @@ var cats = [{
 function createNameLi () {
   for(var i = 0; i < cats.length; i++){
     var li = document.createElement('li');
-    anchor = document.createElement('a');
-    var catListImg = cats[i].img;
     var catListName = cats[i].name;
-    anchor.href = catListImg;
-    anchor.innerText = catListName;
-    li.appendChild(anchor);
+    li.innerHTML = catListName;
     document.getElementById('cat-list').appendChild(li);
-    makeClickHandler(li, cats);
+    makeClickHandler(li, cats[i]);
   };
 };
 createNameLi(cats);
 
 //creats click handler
-function makeClickHandler (liElement, cat) {
+function makeClickHandler (liElement, currentCat) {
   liElement.addEventListener('click', function(){
-    anchor.href = document.getElementById('current-cat').setAttribute('src', this.img);
-    this.count++;
-    getElementById('count').value = new Number(this.count);
-    console.log(this.count);
-    console.log(this.id);
-    console.log(this.img);
+  document.getElementById('cat-image').setAttribute('src', currentCat.img);
+  //this.count++;
+  document.getElementById('count').innerHTML = new Number(currentCat.count);
+  console.log(currentCat.count);
+  console.log(currentCat.id);
+  console.log(currentCat.img);
   });
 };
+
+/*
+function displayChangeImage (image, catImage){
+  getElementById('cat-image').setAttribute("src", catImage);
+  //$('#cat-image').attr("src", catImage);
+}
 
 
 /*
