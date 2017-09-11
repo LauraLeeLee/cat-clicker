@@ -38,24 +38,41 @@ function createNameLi () {
 };
 createNameLi(cats);
 
+var catCounter = document.createElement('h4');
+catCounter.innerHTML = currentCat.count;
+
 //creats click handler
 function displayCurrentCat (liElement, currentCat) {
   liElement.addEventListener('click', function(){
-  document.getElementById('cat-image').setAttribute('src', currentCat.img);
-  console.log(currentCat.id);
-  console.log(currentCat.img);
-  });
+    //adds cat name to document
+    var catName = document.createElement('h3');
+    catName.innerHTML = currentCat.name;
+    document.getElementById('display-div').appendChild(catName);
+    //adds current Cat image
+    document.getElementById('cat-image').setAttribute('src', currentCat.img);
+    console.log(currentCat.id);
+    console.log(currentCat.img);
+    //adds counter to document
+
+    catCounter.id = "counter-" + currentCat.id;
+    document.getElementById('display-div').appendChild(catCounter);
+    catCountIncrement(currentCat, count);
+    });
 };
 
-function catCountIncrement (currentCat, counter){
-  currentCat.addEventListener('click', function(){
-    console.log("CurrentCat is " + currentCat.name);
-    console.log("Tally =" + currentCat.count);
-    currentCat.count++;
+
+
+function catCountIncrement (clickedCat, counter){
+  clickedCat.addEventListener('click', function(){
+    console.log("CurrentCat is " + clickedCat.name);
+    console.log("Tally= " + clickedCat.count);
+    var selectedCat = document.getElementById('cat-image').setAttribute('src', selectedCat.img);
+    selectedCat.src = catListImg;
+    clickedCat.count++;
     counterElem.innerHTML = Number(counterElem.innerHTML)+1;
-    document.getElementById('count').innerHTML = new Number(currentCat.count);
+    document.getElementById('count').innerHTML = new Number(clickedCat.count);
   });
-};  
+};
 
 /*
 function displayChangeImage (image, catImage){

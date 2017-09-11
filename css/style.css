@@ -35,12 +35,14 @@ h2 {
 h3 {
   color: #ff66d9;
   font: bold 36px verdana, sans-serif;
+  text-align: center;
 }
 
 h4 {
   color: #ff66d9;
   font: bold 36px verdana, sans-serif;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .catElem {
