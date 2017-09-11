@@ -38,8 +38,7 @@ function createNameLi () {
 };
 createNameLi(cats);
 
-var catCounter = document.createElement('h4');
-catCounter.innerHTML = currentCat.count;
+
 
 //creats click handler
 function displayCurrentCat (liElement, currentCat) {
@@ -53,7 +52,8 @@ function displayCurrentCat (liElement, currentCat) {
     console.log(currentCat.id);
     console.log(currentCat.img);
     //adds counter to document
-
+    var catCounter = document.createElement('h4');
+    catCounter.innerHTML = currentCat.count;
     catCounter.id = "counter-" + currentCat.id;
     document.getElementById('display-div').appendChild(catCounter);
     catCountIncrement(currentCat, count);
