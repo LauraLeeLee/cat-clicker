@@ -33,22 +33,29 @@ function createNameLi () {
     var catListName = cats[i].name;
     li.innerHTML = catListName;
     document.getElementById('cat-list').appendChild(li);
-    makeClickHandler(li, cats[i]);
+    displayCurrentCat(li, cats[i]);
   };
 };
 createNameLi(cats);
 
 //creats click handler
-function makeClickHandler (liElement, currentCat) {
+function displayCurrentCat (liElement, currentCat) {
   liElement.addEventListener('click', function(){
   document.getElementById('cat-image').setAttribute('src', currentCat.img);
-  //this.count++;
-  document.getElementById('count').innerHTML = new Number(currentCat.count);
-  console.log(currentCat.count);
   console.log(currentCat.id);
   console.log(currentCat.img);
   });
 };
+
+function catCountIncrement (currentCat, counter){
+  currentCat.addEventListener('click', function(){
+    console.log("CurrentCat is " + currentCat.name);
+    console.log("Tally =" + currentCat.count);
+    currentCat.count++;
+    counterElem.innerHTML = Number(counterElem.innerHTML)+1;
+    document.getElementById('count').innerHTML = new Number(currentCat.count);
+  });
+};  
 
 /*
 function displayChangeImage (image, catImage){
