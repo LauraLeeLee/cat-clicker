@@ -41,7 +41,6 @@ createNameLi(cats);
 //creats click handler
 function displayCurrentCat (liElement, currentCat) {
   liElement.addEventListener('click', function(){
-    //document.body.innerHTML = "";
     //adds cat name to document
     var catName = document.createElement('h3');
     catName.innerHTML = currentCat.name;
@@ -55,19 +54,19 @@ function displayCurrentCat (liElement, currentCat) {
     catCounter.innerHTML = currentCat.count;
     catCounter.id = "counter-" + currentCat.id;
     document.getElementById('display-div').appendChild(catCounter);
-    catCountIncrement(currentCat, count);
+    catCountIncrement('cat-image', cats.count);
     });
 };
 
 
 
-function catCountIncrement (clickedCat, counter){
-  clickedCat.addEventListener('click', function(){
-    console.log("CurrentCat is " + clickedCat.name);
-    console.log("Tally= " + clickedCat.count);
-    var selectedCat = document.getElementById('cat-image').setAttribute('src', selectedCat.img);
-    selectedCat.src = catListImg;
-    clickedCat.count++;
+function catCountIncrement (catImg, counter){
+  catImg.addEventListener('click', function(){
+    console.log("CurrentCat is " + catImg.name);
+    console.log("Tally= " + catImg.count);
+    //var selectedCat = document.getElementById('cat-image').setAttribute('src', selectedCat.img);
+    //selectedCat.src = catListImg;
+    catImg.count++;
     counterElem.innerHTML = Number(counterElem.innerHTML)+1;
     document.getElementById('count').innerHTML = new Number(clickedCat.count);
   });
