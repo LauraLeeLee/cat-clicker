@@ -47,14 +47,7 @@ function displayCurrentCat (liElement, currentCat) {
     document.getElementById('display-div').appendChild(catName);
     //adds current Cat image
     document.getElementById('cat-image').setAttribute('src', currentCat.img);
-    console.log(currentCat.id);
     console.log(currentCat.img);
-    //adds counter to document
-    var catCounter = document.createElement('h4');
-    catCounter.innerHTML = currentCat.count;
-    catCounter.id = "counter-" + currentCat.id;
-    document.getElementById('display-div').appendChild(catCounter);
-    catCountIncrement('cat-image', cats.count);
     });
 };
 
@@ -66,11 +59,12 @@ function catCountIncrement (catImg, counter){
     console.log("Tally= " + catImg.count);
     //var selectedCat = document.getElementById('cat-image').setAttribute('src', selectedCat.img);
     //selectedCat.src = catListImg;
-    catImg.count++;
-    counterElem.innerHTML = Number(counterElem.innerHTML)+1;
+    this.count++;
     document.getElementById('count').innerHTML = new Number(clickedCat.count);
   });
+  catCountIncrement('img', cats.count);
 };
+
 
 /*
 function displayChangeImage (image, catImage){
