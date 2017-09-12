@@ -50,24 +50,6 @@ h4 {
   visibility: hidden;
 }
 
-.catImg {
-  display: inline;
-}
-
-figure {
-  display: inline;
-}
-
-.tallycounter {
-  margin-bottom: 50px;
-  margin-top: -20px;
-}
-
-.inlineP {
-  display: inline;
-  margin-right: 20px;
-}
-
 #list-div {
   /*float: left;*/
   margin-top: 20px;
@@ -83,6 +65,9 @@ figure {
   /*float: right;*/
   margin-top: 20px;
   width: 200px;
+}
+.display-img {
+  width: 100px;
 }
 
 li {

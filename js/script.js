@@ -38,11 +38,10 @@ function createNameLi () {
 };
 createNameLi(cats);
 
-
-
 //creats click handler
 function displayCurrentCat (liElement, currentCat) {
   liElement.addEventListener('click', function(){
+    //document.body.innerHTML = "";
     //adds cat name to document
     var catName = document.createElement('h3');
     catName.innerHTML = currentCat.name;
@@ -79,9 +78,8 @@ function displayChangeImage (image, catImage){
   getElementById('cat-image').setAttribute("src", catImage);
   //$('#cat-image').attr("src", catImage);
 }
-
-
 /*
+
 var catCount = cats.count;
 
 var catDisplay = function (){
