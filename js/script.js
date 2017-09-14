@@ -44,9 +44,7 @@ function displayCurrentCat (liElement, currentCat) {
     //adds cat name to document
     var catName = document.createElement('h3');
     catName.innerHTML = currentCat.name;
-    //document.getElementById('display-div').innerHTML = '<h3>' + currentCat.name + '</h3>';
-    document.getElementById('display-div').appendChild(catName);
-    document.getElementById('display-div').replaceChild(catName, catName);
+    document.getElementById('name').innerHTML = catName.innerHTML;
     //adds current Cat image
     document.getElementById('cat-image').setAttribute('src', currentCat.img);
     console.log(currentCat.img);
