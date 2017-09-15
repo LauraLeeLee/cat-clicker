@@ -44,7 +44,7 @@ function updatePage(cat) {
   catName.innerHTML = cat.name;
   catImg.setAttribute('src', cat.img);
   countElement.innerHTML = cat.count;
-}
+};
 
 //set up click handler
 function assignClickHandler(liElement, currentCat) {
@@ -78,14 +78,14 @@ function init() {
   //set up the cat image click handler
   catImg.addEventListener('click', function(){
     console.log('Image clicked! Current cat index is...', currentCatIndex);
-    cats.count++;
+    cats[currentCatIndex].count++;
     console.log('Image clicked- current cat count is ', cats[currentCatIndex].count);
     //logic??
     document.getElementById('count').innerHTML = cats[currentCatIndex].count;
   });
   //render the initial cat info to the page
   updatePage(cats[currentCatIndex]);
-}
+};
 init();
 
 
