@@ -31,6 +31,8 @@ var cats = [{
 
 //currently selected cat, changes when mae is clicked
 var currentCatIndex = 0;
+var currentCat = cats.img;
+var currentCount = cats.count;
 
 //cache page elements
 var catImg = document.getElementById('cat-image');
@@ -41,6 +43,7 @@ var catName = document.getElementById('name');
 function updatePage(cat) {
   catName.innerHTML = cat.name;
   catImg.setAttribute('src', cat.img);
+  countElement.innerHTML = cat.count;
 }
 
 //set up click handler
@@ -53,6 +56,7 @@ function assignClickHandler(liElement, currentCat) {
     console.log('clicked!', currentCat.name, currentCat.img);
     //TODO update counter and....
     //???
+    document.getElementById('count').innerHTML = currentCat.count;
   });
 };
 
@@ -74,8 +78,10 @@ function init() {
   //set up the cat image click handler
   catImg.addEventListener('click', function(){
     console.log('Image clicked! Current cat index is...', currentCatIndex);
-
+    cats.count++;
+    console.log('Image clicked- current cat count is ', cats[currentCatIndex].count);
     //logic??
+    document.getElementById('count').innerHTML = cats[currentCatIndex].count;
   });
   //render the initial cat info to the page
   updatePage(cats[currentCatIndex]);
