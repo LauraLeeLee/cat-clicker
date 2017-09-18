@@ -64,10 +64,12 @@ h4 {
 #display-div {
   /*float: right;*/
   margin-top: 20px;
-  width: 200px;
+  width: 300px;
+  text-align: center;
 }
-.display-img {
-  width: 100px;
+
+#cat-image {
+  border: 15px double #fff;
 }
 
 li {
